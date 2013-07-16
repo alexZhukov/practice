@@ -10,11 +10,11 @@ namespace Rooletochka {
         static object urlLocker = new object();
 
         public static Model CreateModel() {
-            string connect = @"Server = 127.0.0.1; Port = 5432; User Id = s;
-                Database = practice;";
+            //string connect = @"Server = 127.0.0.1; Port = 5432; User Id = s;
+            //    Database = practice;";
             // Connection string for windows.
-            // string connect = @"Server=127.0.0.1;Port=5432;User Id=postgres;
-            //    Password=1111;Database=test_db;Preload Reader = true;";
+             string connect = @"Server=127.0.0.1;Port=5432;User Id=postgres;
+                Password=1111;Database=test_db;Preload Reader = true;";
             var connection = new NpgsqlConnection(connect);
             return new Model(connection);
         }
@@ -42,13 +42,14 @@ namespace Rooletochka {
                 siteId = urlRow.GetInt32(0);
                 model.MarkSiteProcessed(siteId);
             }
-            url = urlRow.GetString(1);
-            Console.WriteLine(url);
+             try {
+                url = urlRow.GetString(1);
+                Console.WriteLine(url);
 
-            try {
+           
                 Analyzer analyzer = new Analyzer(url);
                 int reportId = model.NewReport(siteId);
-                report = analyzer.Analyze(reportId);
+                Report report = analyzer.Analyze(reportId);
                 report.PutIntoDB(model, siteId);
             }
             catch (InvalidOperationException ex) {

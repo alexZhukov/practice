@@ -18,6 +18,7 @@ namespace Rooletochka {
         private const string INLINE_CSS = "inlineCss";
 
         private const byte MAX_CHILD_PAGE_IN_REPORT = 15;
+        private const int SLEEP_TIME = 1000;
         private readonly string _url;
         private readonly string _content;
         private List<String> _pages;
@@ -59,8 +60,10 @@ namespace Rooletochka {
             Report report = new Report(reportId);
             report.MainUrl = Url;
             report.RobotsTxt = CheckRobotsTxt(Url);
-            Thread.Sleep(500);
+            Thread.Sleep(SLEEP_TIME);
             report.Error404 = CheckError404(Url);
+            Thread.Sleep(SLEEP_TIME);
+            report.Redirect = CheckMirror(Url);
 
             report.mainPageResult = this.AnalyzePage(Url);
             Features result = new Features();
@@ -72,7 +75,7 @@ namespace Rooletochka {
                     report.AddCheckedPage(result, page);
                     count++;
                     if (count == MAX_CHILD_PAGE_IN_REPORT) break;
-                    Thread.Sleep(500);
+                    Thread.Sleep(SLEEP_TIME);
                 }
                 catch (Exception ex) {
                     Console.WriteLine(@"method: Report Analyze(...)\n {0}\n,
