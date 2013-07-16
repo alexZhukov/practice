@@ -47,10 +47,9 @@ namespace Rooletochka {
 
             try {
                 Analyzer analyzer = new Analyzer(url);
-                Report report = new Report(model, siteId);
-                report = analyzer.Analyze(report.Id);
+                int reportId = model.NewReport(siteId);
+                report = analyzer.Analyze(reportId);
                 report.PutIntoDB(model, siteId);
-                Thread.Sleep(SLEEP_TIME);
             }
             catch (InvalidOperationException ex) {
                 Console.WriteLine("Analyze Error: {0}", ex.Message);
