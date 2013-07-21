@@ -10,7 +10,7 @@ namespace Rooletochka {
     public class Analyzer {
         // Names of features for each page on site.
         //
-        private const string TAG_BODY = "tagBody";
+        private const string TAG_BODY = "tagBody"; 
         private const string TAG_HTML = "tagHtml";
         private const string TAG_HEAD = "tagHead";
         private const string TAG_TITLE = "tagTitle";
@@ -65,13 +65,13 @@ namespace Rooletochka {
             Thread.Sleep(SLEEP_TIME);
             report.Redirect = CheckMirror(Url);
 
-            report.mainPageResult = this.AnalyzePage(Url);
+            report.mainPageResult = this.AnalyzePage();
             Features result = new Features();
             int count = 0;
             foreach (string page in _pages) {
                 try {
                     Analyzer analyzer = new Analyzer(page, false);
-                    result = analyzer.AnalyzePage(analyzer.Url);
+                    result = analyzer.AnalyzePage();
                     report.AddCheckedPage(result, page);
                     count++;
                     if (count == MAX_CHILD_PAGE_IN_REPORT) break;
@@ -109,7 +109,7 @@ namespace Rooletochka {
 
         // Analyze one page of site.
         //
-        private Features AnalyzePage(string url) {
+        private Features AnalyzePage() {
             Features result = new Features();
             result[TAG_BODY] = CheckBodyTag();
             result[TAG_HEAD] = CheckHeadTag();
