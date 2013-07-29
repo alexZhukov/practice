@@ -1,7 +1,10 @@
-CREATE TABLE users (
+CREATE TABLE sequel_users (
   id serial primary key,
-  name varchar(40) not null,
-  password varchar(20) not null
+  email varchar(40) unique,
+  hashed_password varchar(80) not null,
+  salt varchar(40),
+  created_at timestamp,
+  permission_level integer default 1
 );
 
 CREATE TYPE state as enum ('nothing', 'data', 'report', 'processing', 'failed');
@@ -35,7 +38,7 @@ CREATE TABLE rules (
 );
 
 CREATE TABLE user_site (
-  user_id integer references users(id) on update cascade,
+  user_id integer references sequel_users(id) on update cascade,
   site_id integer references sites(id) on update cascade,
   unique (user_id, site_id)
 );

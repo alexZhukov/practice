@@ -51,6 +51,6 @@ class describe_table : nspec
     {
         before = () => BeforeWhere();
         it["The count of rows should be less than 3"] = () =>
-            counter.should_be(2);
+            (counter < 3).should_be_true;
     }
 }

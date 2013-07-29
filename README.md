@@ -1,10 +1,15 @@
-practice
+Rooletochka
 ========
 
-Practice at Ingate.
+Rooletochka is small tool for checking sites on compliance with some rules. This
+is task for practice at Ingate.
+
+![alt text][logo]
+
+[logo]: https://github.com/s-mage/practice/blob/master/screen.png "Main screen of tool"
 
 ===
-Solution для VS2010 с заготовкой под windows service, установщиком и консольным приложением 
+Solution для VS2010 с заготовкой под windows service, установщиком и консольным приложением
 https://dl.dropboxusercontent.com/u/61192714/Practice/Rooletochka.rar
 
 TODO
@@ -14,17 +19,8 @@ TODO
   2. Practice with Npgsql.dll -- In progress.
   3. Practice with clonning repo and adding pull requests -- Done.
   4. Link methods for DB aka Table and methods for site analysis aka Analyzer
-  throuth Model.
+  throuth Model. -- Done.
   5. The same thing for .pdf generation, except the moment that we don't have
   any methods for .pdf generation now.
-  6. The same thing with frontend.
+  6. The same thing with frontend. -- Frontend will be on ruby. Cuz I can.
   7. Service for Windows (or daemon for Unix) and Multithreading -- In progress
-  
-rm
-==
-
-Пагни, а давайте свои задачи и мысли сюда писать. Логи жаббера -- это все хорошо, но их никто не читает, а сюда уже можно кидать готовый результат.
-
-Мой костыль для человечного select-insert работает. Теперь нужно написать модель, а для этого нужны все сразу или по очереди, кто делает проверку правил, генерацию отчетов и фронтенд.
-
-Нужно научиться правильно складывать в базу результаты обработки сайта.

@@ -1,0 +1,24 @@
+!!!
+%html{lang: 'en'}
+  %head
+    %meta{'http-equiv' => 'content-type', content: 'text/html; charset=utf-8'}
+    %meta{charset: 'utf-8'}
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
+
+    %link{type: 'text/css', rel: 'stylesheet',
+          href: url('/css/normalize.css')}
+    %link{type: 'text/css', rel: 'stylesheet',
+          href: url('/css/app.css')}
+    %link{type: 'text/css', rel: 'stylesheet',
+          href: url('/css/project.css')}
+
+    %title Rooletochka
+    %body
+      %header.row
+        .small-6.columns
+          %h2
+            %a{href: '/', title: 'Main page'} Rooletochka
+      =yield
+      %footer.row
+        %p.right
+          %a{href: 'https://github.com/s-mage', title: 'My github'} rm

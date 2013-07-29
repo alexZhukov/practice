@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="TableTest.dll" total="2" failures="0" not-run="0" date="2013-07-24" time="11:44:22">
+  <environment nunit-version="2.4.8.0" clr-version="2.0.50727.1433" os-version="Unix 3.9.7.0" platform="Unix" cwd="/home/s/evil/practice/test" machine-name="s" user="s" user-domain="s" />
+  <culture-info current-culture="ru-RU" current-uiculture="ru-RU" />
+  <test-suite name="TableTest.dll" success="True" time="0.197" asserts="0">
+    <results>
+      <test-suite name="Rooletochka" success="True" time="0.189" asserts="0">
+        <results>
+          <test-suite name="TableTest" success="True" time="0.166" asserts="0">
+            <results>
+              <test-case name="Rooletochka.TableTest.TestInsertAndSelect" executed="True" success="True" time="0.127" asserts="3" />
+              <test-case name="Rooletochka.TableTest.TestUpdate" executed="True" success="True" time="0.025" asserts="2" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
